@@ -8,3 +8,38 @@ export const iterateOnElements = (selector, callback) => {
     callback($el, index);
   });
 };
+
+export const clickOnElement = (locater,ifForceing) => {
+  return cy.get(locater).click({force:ifForceing})
+}
+
+export const verifyElementExsistance = (locater, flag) => {
+  if(flag){
+    return cy.get(locater).should('exist')
+  }
+  else{
+    return cy.get(locater).should('not.exist')
+  }
+}
+
+export const elementContains = (locater,text) => {
+  return cy.get(locater).contains(text)
+}
+
+export const buttonStatus = (locater,flag) => {
+  if(flag){
+    return cy.get(locater).should('be.enabled')
+  }
+  else{
+    return cy.get(locater).should('be.disabled')
+  }
+}
+
+export const checkedStatus = (locater,flag) => {
+  if(flag){
+    return cy.get(locater).should('be.checked')
+  }
+  else{
+    return cy.get(locater).should('not.be.checked')
+  }
+}

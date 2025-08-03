@@ -13,7 +13,7 @@ export const locaters = {
   resultContainer: '#result',
   nodeTitles: '.rct-title',
   toggleButton: 'button',
-
+  
   nodeHome: `${baseNodePath} > :nth-child(1) `,
   homeChildren: `${baseNodePath} > :nth-child(2) > li`,
   nodeDesktop: `${baseNodePath} > :nth-child(2) > :nth-child(1)`,

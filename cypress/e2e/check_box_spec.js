@@ -1,7 +1,7 @@
 import * as commonHelper from '../support/common_helper.js';
 import * as checkBoxHelper from '../support/check_box_helper.js';
 
-context('Check Box Component', () => {
+describe('Check Box Component', () => {
   beforeEach(() => {
     commonHelper.visitPage('/checkbox');
   });
