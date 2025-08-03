@@ -1,5 +1,5 @@
 name: Cypress DemoQA Tests
-description: |
+description: 
   This repository contains end-to-end test automation for the DemoQA website using Cypress. 
   The project focuses on testing the Check Box component with clean structure, modular helpers, and Cypress best practices.
 project_structure: |
