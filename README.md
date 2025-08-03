@@ -1,20 +1,24 @@
-name: Cypress DemoQA Tests
-description: 
-  This repository contains end-to-end test automation for the DemoQA website using Cypress. 
-  The project focuses on testing the Check Box component with clean structure, modular helpers, and Cypress best practices.
-project_structure: |
+# Cypress DemoQA Tests
+
+This repository contains end-to-end test automation for the [DemoQA](https://demoqa.com/) website using Cypress.  
+The project focuses on testing the **Check Box** component with a clean structure, modular helpers, and Cypress best practices.
+
+
+## 📁 Project Structure:
+```
   cypress-demoqa-tests/
-  │
-  ├── cypress/
-  │   ├── e2e/
-  │   │   └── spec files         # Cypress test spec for Check Box page
-  │   └── support/
-  │       ├── helper files         # Shared logic (e.g., visiting pages)
-  │
-  ├── .gitignore                        # Ignores node_modules and other files
-  ├── cypress.config.js                 # Cypress configuration
-  ├── package.json                      # Project dependencies and scripts
-  └── README.md                         # This file
+│
+├── cypress/
+│ ├── e2e/
+│ │ └── spec files
+│ └── support/
+│ ├──  helper files
+│
+├── .gitignore # Ignores node_modules and Cypress videos/screenshots
+├── cypress.config.js # Cypress configuration
+├── package.json # Project dependencies and scripts
+└── README.md # You're here!
+```
 features:
   - Cypress automation for the Check Box component
   - Modular and maintainable structure
