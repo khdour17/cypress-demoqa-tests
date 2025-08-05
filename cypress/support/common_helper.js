@@ -1,25 +1,29 @@
 export const visitPage = (url = '/') => {
-    cy.visit(url);
+    cy.visit(url)
 }
 
 
 export const iterateOnElements = (selector, callback) => {
   cy.get(selector).each(($el, index) => {
-    callback($el, index);
-  });
-};
-
-export const clickOnElement = (locater,ifForceing) => {
-  return cy.get(locater).click({force:ifForceing})
+    callback($el, index)
+  })
 }
 
-export const verifyElementExsistance = (locater, flag) => {
+export const clickOnElement = (locater,ifForcing = false) => {
+  return cy.get(locater).click({force:ifForcing})
+}
+
+export const verifyElementExistence = (locater, flag) => {
   if(flag){
     return cy.get(locater).should('exist')
   }
   else{
     return cy.get(locater).should('not.exist')
   }
+}
+
+export const elementItemsLength = (locater,length) =>{
+  return cy.get(locater).should('have.length', length)
 }
 
 export const elementContains = (locater,text) => {
