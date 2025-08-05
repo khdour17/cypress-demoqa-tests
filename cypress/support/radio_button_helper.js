@@ -13,14 +13,14 @@ export const locaters = {
 }
 
 export const elementsExist = () =>{
-    commonHelper.verifyElementExsistance(locaters.questionText,true).contains('Do you like the site?')
-    commonHelper.verifyElementExsistance(locaters.yesRadio,true)
-    commonHelper.verifyElementExsistance(locaters.noRadio,true)
-    commonHelper.verifyElementExsistance(locaters.impressiveRadio,true)
-    commonHelper.verifyElementExsistance(locaters.yesLabel,true)
-    commonHelper.verifyElementExsistance(locaters.noLabel,true)
-    commonHelper.verifyElementExsistance(locaters.impressiveLabel,true)
-    commonHelper.verifyElementExsistance(locaters.output,false)
+    commonHelper.verifyElementExistence(locaters.questionText,true).contains('Do you like the site?')
+    commonHelper.verifyElementExistence(locaters.yesRadio,true)
+    commonHelper.verifyElementExistence(locaters.noRadio,true)
+    commonHelper.verifyElementExistence(locaters.impressiveRadio,true)
+    commonHelper.verifyElementExistence(locaters.yesLabel,true)
+    commonHelper.verifyElementExistence(locaters.noLabel,true)
+    commonHelper.verifyElementExistence(locaters.impressiveLabel,true)
+    commonHelper.verifyElementExistence(locaters.output,false)
     commonHelper.buttonStatus(locaters.yesRadio,true)
     commonHelper.buttonStatus(locaters.impressiveRadio,true)
     commonHelper.buttonStatus(locaters.noRadio,false)
@@ -34,7 +34,7 @@ const expectedOutput = [
 export const clickRadioAndcheckOutput = (locater,index) =>{
     commonHelper.clickOnElement(locater,true)
     commonHelper.checkedStatus(locater,true)
-    commonHelper.verifyElementExsistance(locaters.output,true).contains(expectedOutput[index])
+    commonHelper.verifyElementExistence(locaters.output,true).contains(expectedOutput[index])
 }
 
 

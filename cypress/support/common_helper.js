@@ -47,3 +47,7 @@ export const checkedStatus = (locater,flag) => {
     return cy.get(locater).should('not.be.checked')
   }
 }
+
+export const fillInput = (locater,value) =>{
+  cy.get(locater).clear().type(value)
+}
