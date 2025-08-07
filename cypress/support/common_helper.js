@@ -30,6 +30,10 @@ export const elementContains = (locater,text) => {
   return cy.get(locater).contains(text)
 }
 
+export const elementValue = (locater,value) =>{
+  return cy.get(locater).should('have.value',value)
+}
+
 export const buttonStatus = (locater,flag) => {
   if(flag){
     return cy.get(locater).should('be.enabled')
@@ -49,5 +53,5 @@ export const checkedStatus = (locater,flag) => {
 }
 
 export const fillInput = (locater,value) =>{
-  cy.get(locater).clear().type(value)
+  return cy.get(locater).clear().type(value)
 }
