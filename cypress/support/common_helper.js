@@ -9,7 +9,19 @@ export const iterateOnElements = (selector, callback) => {
   })
 }
 
-export const clickOnElement = (locater,ifForcing = false) => {
+export const clickOnElement = (locator, ifForcing = false) => {
+  return cy.get(locator).click({ force: ifForcing })
+}
+
+export const doubleClickOnElement = (locator, ifForcing = false) => {
+  return cy.get(locator).dblclick({ force: ifForcing })
+}
+
+export const rightClickOnElement = (locator, ifForcing = false) => {
+  return cy.get(locator).rightclick({ force: ifForcing })
+}
+
+export const dublleclickOnElement = (locater,ifForcing = false) => {
   return cy.get(locater).click({force:ifForcing})
 }
 
