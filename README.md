@@ -10,9 +10,11 @@ The project focuses on testing the **Check Box** component with a clean structur
 │
 ├── cypress/
 │ ├── e2e/
-│ │ └── spec files
-│ └── support/
-│ ├──  helper files
+│ │   └── spec files
+│ ├── support/
+│ │   └── helper files
+│ └── configs/
+│     └── config files for different test setups
 │
 ├── .gitignore # Ignores node_modules and Cypress videos/screenshots
 ├── cypress.config.js # Cypress configuration
@@ -42,6 +44,15 @@ The project focuses on testing the **Check Box** component with a clean structur
    npx cypress run
    ```
 
+5. **Run tests with a specific config file**
+   ```bash
+   npx cypress run --config-file cypress/configs/<config-file-name>.js
+   ```
+   **Example:**
+   ```bash
+   npx cypress run --config-file cypress/configs/buttons.config.js
+   ```
+
 ---
 
 ## ✅ Features
@@ -51,5 +62,5 @@ The project focuses on testing the **Check Box** component with a clean structur
 - Clear locator abstraction for UI elements
 - Clean and readable test cases using Cypress `it()` blocks only
 - Scalable structure for adding more components or test scenarios
-
+- Flexible configuration system with multiple `.config.js` files allowing targeted test runs for specific pages or features
 ---
