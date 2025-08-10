@@ -3,7 +3,7 @@ import * as elementsPageHelper from '../support/elements_page_helper.js';
 
 describe('Elements Page UI', () => {
   beforeEach(() => {
-    commonHelper.visitPage('/elements');
+    commonHelper.visitPage(Cypress.config('baseUrl'));
   });
 
   it('displays default instruction message', () => {

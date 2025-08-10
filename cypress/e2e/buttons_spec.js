@@ -3,7 +3,7 @@ import * as buttonsHelper from '../support/buttons_helper.js'
 
 describe('Buttons Page Tests:', () => {
   beforeEach(() => {
-    commonHelper.visitPage('/buttons')
+    commonHelper.visitPage(Cypress.config('baseUrl'))
   })
 
   it('should verify buttons exist and no messages are initially visible', () => {

@@ -1,5 +1,5 @@
-import * as commonHelper from '../support/common_helper.js';
-import * as elementsPageHelper from '../support/elements_page_helper.js';
+import * as commonHelper from '../support/common_helper.js'
+import * as elementsPageHelper from '../support/elements_page_helper.js'
 
 export const locaters = {
   form: '#userForm',
@@ -13,7 +13,7 @@ export const locaters = {
   outputEmail: '#email',
   outputCurAddress: '#currentAddress',
   outputPerAddress: '#permanentAddress',
-};
+}
 
 export const formData = [
   {
@@ -29,69 +29,75 @@ export const formData = [
   { fullName: 'Ali', email: 'ali@example' },
   { email: 'ali@example.c' },
   { email: 'علي@example.com' },
-];
+]
+
+const placeholders = [
+  'Full Name',
+  'name@example.com',
+  'Current Address'
+]
 
 export const verifyFormNotSubmitted = () => {
-  cy.get(locaters.output).should('have.value', '');
-};
+  cy.get(locaters.output).should('have.value', '')
+}
 
 export const verifyFieldIsEmpty = ({ locator, placeholder, skipPlaceholderCheck = false }) => {
-  let chain = cy.get(locator).should('have.value', '');
+  let chain = cy.get(locator).should('have.value', '')
   if (!skipPlaceholderCheck && placeholder) {
-    chain.and('have.attr', 'placeholder', placeholder);
+    chain.and('have.attr', 'placeholder', placeholder)
   }
-};
+}
 
 export const verifyInitialFieldState = () => {
-  verifyFieldIsEmpty({ locator: locaters.userNameInput, placeholder: 'Full Name' });
-  verifyFieldIsEmpty({ locator: locaters.emailInput, placeholder: 'name@example.com' });
-  verifyFieldIsEmpty({ locator: locaters.currentAddressInput, placeholder: 'Current Address' });
-  verifyFieldIsEmpty({ locator: locaters.permanentAddressInput, skipPlaceholderCheck: true });
-  verifyFormNotSubmitted();
-};
+  verifyFieldIsEmpty({ locator: locaters.userNameInput, placeholder: placeholders[0] })
+  verifyFieldIsEmpty({ locator: locaters.emailInput, placeholder: placeholders[1] })
+  verifyFieldIsEmpty({ locator: locaters.currentAddressInput, placeholder: placeholders[2] })
+  verifyFieldIsEmpty({ locator: locaters.permanentAddressInput, skipPlaceholderCheck: true })
+  verifyFormNotSubmitted()
+}
 
 export const fillForm = (data) => {
   if (data.fullName) {
-    cy.get(locaters.userNameInput).clear().type(data.fullName);
+    commonHelper.fillInput(locaters.userNameInput,data.fullName)
   }
   if (data.email) {
-    cy.get(locaters.emailInput).clear().type(data.email);
+    commonHelper.fillInput(locaters.emailInput,data.email)
   }
   if (data.currentAddress) {
-    cy.get(locaters.currentAddressInput).clear().type(data.currentAddress);
+    commonHelper.fillInput(locaters.currentAddressInput,data.currentAddress)
   }
   if (data.permanentAddress) {
-    cy.get(locaters.permanentAddressInput).clear().type(data.permanentAddress);
+    commonHelper.fillInput(locaters.permanentAddressInput,data.permanentAddress)
   }
-};
+}
 
 export const submitForm = () => {
-  cy.get(locaters.submitBtn).click();
-};
+  commonHelper.clickOnElement(locaters.submitBtn)
+}
 
 export const verifyOutput = (data) => {
   cy.get(locaters.output).within(()=>{
     if (data.fullName) {
-      cy.get(locaters.outputName).should('contain.text', data.fullName);
+      commonHelper.elementContains(locaters.outputName,data.fullName)
     }
     if (data.email) {
-      cy.get(locaters.outputEmail).should('contain.text', data.email);
+      commonHelper.elementContains(locaters.outputEmail,data.email)
     }
     if (data.currentAddress) {
-      cy.get(locaters.outputCurAddress).should('contain.text', data.currentAddress);
+      commonHelper.elementContains(locaters.outputCurAddress,data.currentAddress)
     }
     if (data.permanentAddress) {
-      cy.get(locaters.outputPerAddress).should('contain.text', data.permanentAddress);
+      commonHelper.elementContains(locaters.outputPerAddress,data.permanentAddress)
     }
   })
   
-};
+}
 
 export const verifyEmailValidity = (shouldBeValid = true) => {
-  const emailField = cy.get(locaters.emailInput);
+  const emailField = cy.get(locaters.emailInput)
   if (shouldBeValid) {
-    emailField.should('not.have.class', 'field-error');
+    emailField.should('not.have.class', 'field-error')
   } else {
-    emailField.should('have.class', 'field-error');
+    emailField.should('have.class', 'field-error')
   }
-};
+}

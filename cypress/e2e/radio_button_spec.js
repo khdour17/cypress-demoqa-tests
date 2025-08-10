@@ -3,7 +3,7 @@ import * as radioHelper from '../support/radio_button_helper.js';
 
 describe('Radio butto tests:', ()=>{
     beforeEach('visit the page:',()=>{
-        commonHelper.visitPage('/radio-button');
+        commonHelper.visitPage(Cypress.config('baseUrl'))
     })
 
     it('check elements exist',()=>{

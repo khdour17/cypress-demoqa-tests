@@ -1,7 +1,11 @@
 export const visitPage = (url = '/') => {
-    cy.visit(url)
+  cy.visit(url)
 }
 
+export const visitConfiguredPage = () => {
+  const path = Cypress.env('startPath') || '/'
+  cy.visit(path)
+} 
 
 export const iterateOnElements = (selector, callback) => {
   cy.get(selector).each(($el, index) => {

@@ -3,7 +3,7 @@ import * as checkBoxHelper from '../support/check_box_helper.js'
 
 describe('Check Box Component', () => {
   beforeEach(() => {
-    commonHelper.visitPage('/checkbox')
+    commonHelper.visitPage(Cypress.config('baseUrl'))
   })
 
   it('displays the tree and expand/collapse controls', () => {

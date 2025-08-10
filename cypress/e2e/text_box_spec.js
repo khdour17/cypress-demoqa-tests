@@ -4,7 +4,7 @@ import * as textBoxHelper from '../support/text_box_helper.js';
 
 describe("Text Box Form", () => {
   beforeEach(() => {
-    commonHelper.visitPage('/text-box');
+    commonHelper.visitPage(Cypress.config('baseUrl'))
   });
 
   it("displays empty fields with proper placeholders", () => {

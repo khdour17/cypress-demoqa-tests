@@ -9,9 +9,9 @@ export const locaters = {
   checkboxIcons: '.rct-checkbox',
   checkedIcons: '.rct-icon-check',
   labelTitles: '.rct-title',
+  node: '.rct-node',
   treeRoot: '#tree-node',
   resultContainer: '#result',
-  nodeTitles: '.rct-title',
   toggleButton: 'button',
   nodeHome: `${baseNodePath}`,
   nodeHomeLabel: `${baseNodePath} > label`,
@@ -96,8 +96,8 @@ export const verifySelectingAllOutput = (cleanForOutput = true) => {
 // === Child expand/verify helpers ===
 
 export const expandAndVerify = (nodeName, expectedChildren) => {
-  cy.contains('span.rct-title', nodeName)
-    .parents('.rct-node')
+  cy.contains(locaters.labelTitles, nodeName)
+    .parents(locaters.node)
     .first()
     .as('currentNode')
 
@@ -108,14 +108,14 @@ export const expandAndVerify = (nodeName, expectedChildren) => {
   })
 
   // Re-select node after expansion (DOM updated)
-  cy.contains('span.rct-title', nodeName)
-    .parents('.rct-node')
+  cy.contains(locaters.labelTitles, nodeName)
+    .parents(locaters.node)
     .first()
     .as('currentNode')
 
   cy.get('@currentNode').within(() => {
     expectedChildren.forEach(child => {
-      cy.contains('span.rct-title', child).should('be.visible')
+      cy.contains(locaters.labelTitles, child).should('be.visible')
     })
   })
 }

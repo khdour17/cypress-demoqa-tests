@@ -12,8 +12,10 @@ export const locaters = {
     output: '.mt-3'
 }
 
+const question = 'Do you like the site?'
+
 export const elementsExist = () =>{
-    commonHelper.verifyElementExistence(locaters.questionText,true).contains('Do you like the site?')
+    commonHelper.verifyElementExistence(locaters.questionText,true).contains(question)
     commonHelper.verifyElementExistence(locaters.yesRadio,true)
     commonHelper.verifyElementExistence(locaters.noRadio,true)
     commonHelper.verifyElementExistence(locaters.impressiveRadio,true)
@@ -29,7 +31,6 @@ export const elementsExist = () =>{
 const expectedOutput = [
     "You have selected Yes",
     "You have selected Impressive",
-
 ]
 export const clickRadioAndcheckOutput = (locater,index) =>{
     commonHelper.clickOnElement(locater,true)
