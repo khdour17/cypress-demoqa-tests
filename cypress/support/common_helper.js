@@ -71,3 +71,8 @@ export const checkedStatus = (locater,flag) => {
 export const fillInput = (locater,value) =>{
   return cy.get(locater).clear().type(value)
 }
+
+
+export const interceptGetApi = (apiEndpoint, alias) => {
+  return cy.intercept('GET', `**/${apiEndpoint}`).as(alias)
+}

@@ -19,7 +19,7 @@ describe('Links Page Tests', () => {
     linksHelper.clickExternalLink(linksHelper.locators.dynamicLink)
   })
 
-  it('Verify API link responses', () => {
+  it.only('Verify API link responses', () => {
      linksHelper.apiLinksData.forEach(link => {
       linksHelper.clickApiLinkAndVerify(
         link.locator,

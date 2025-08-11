@@ -40,8 +40,7 @@ export const clickExternalLink = (locator) => {
 }
 
 export const clickApiLinkAndVerify = (locator, apiEndpoint, expectedStatus, expectedText) => {
-  cy.intercept('GET', `**/${apiEndpoint}`).as('apiCheck')
-
+  commonHelper.interceptGetApi(apiEndpoint,'apiCheck')
   commonHelper.clickOnElement(locator)
 
   cy.wait('@apiCheck')
