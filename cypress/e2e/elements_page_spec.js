@@ -1,6 +1,8 @@
 import * as commonHelper from '../support/common_helper.js';
 import * as elementsPageHelper from '../support/elements_page_helper.js';
 
+// '/elements'
+// Cypress.config('baseUrl')
 describe('Elements Page UI', () => {
   beforeEach(() => {
     commonHelper.visitPage(Cypress.config('baseUrl'));
