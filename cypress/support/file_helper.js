@@ -60,7 +60,7 @@ export const downloadAndCompare = () => {
 
 
 export const uploadFileAndCheckPath = () => {
-    cy.get(locators.uploadInput).selectFile(testData.snapshotPath, { force: true })
+    commonHelper.uploadFile(locators.uploadInput,testData.snapshotPath)
     commonHelper.elementContains(locators.uploadMessage,testData.snapshotName)
 }
 

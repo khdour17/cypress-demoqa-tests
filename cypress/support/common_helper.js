@@ -71,3 +71,7 @@ export const fillInput = (locater,value) =>{
 export const interceptApi = (apiEndpoint) => {
   return cy.intercept('GET', `**/${apiEndpoint}`).as('apiCheck')
 }
+
+export const uploadFile = (locater,path) =>{
+  return cy.get(locater).selectFile(path, { force: true })
+}
