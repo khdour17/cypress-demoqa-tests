@@ -2,11 +2,6 @@ export const visitPage = (url = '/') => {
   cy.visit(url)
 }
 
-export const visitConfiguredPage = () => {
-  const path = Cypress.env('startPath') || '/'
-  cy.visit(path)
-} 
-
 export const iterateOnElements = (selector, callback) => {
   cy.get(selector).each(($el, index) => {
     callback($el, index)
@@ -73,6 +68,6 @@ export const fillInput = (locater,value) =>{
 }
 
 
-export const interceptGetApi = (apiEndpoint, alias) => {
-  return cy.intercept('GET', `**/${apiEndpoint}`).as(alias)
+export const interceptApi = (apiEndpoint) => {
+  return cy.intercept('GET', `**/${apiEndpoint}`).as('apiCheck')
 }

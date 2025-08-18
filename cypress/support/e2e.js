@@ -25,3 +25,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   // Let all other errors fail the test
   return true;
 });
+
+
+import { addMatchImageSnapshotCommand } from '@simonsmith/cypress-image-snapshot/command';
+
+addMatchImageSnapshotCommand();
