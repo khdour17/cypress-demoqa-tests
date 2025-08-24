@@ -1,7 +1,9 @@
 # Cypress DemoQA Tests
 
 This repository contains end-to-end test automation for the [DemoQA](https://demoqa.com/) website using Cypress.  
-The project focuses on testing the **Check Box** component with a clean structure, modular helpers, and Cypress best practices.
+Covers multiple pages and components including Forms, Check Boxes,
+    Web Tables, Buttons, Alerts, and Widgets. Uses a modular structure,
+    reusable helpers, and best practices for maintainable and scalable tests.
 
 
 ## 📁 Project Structure:
@@ -56,11 +58,13 @@ The project focuses on testing the **Check Box** component with a clean structur
 ---
 
 ## ✅ Features
-
-- Fully modular structure with clear separation of test logic and test execution
-- Reusable helper functions for better maintainability
-- Clear locator abstraction for UI elements
-- Clean and readable test cases using Cypress `it()` blocks only
-- Scalable structure for adding more components or test scenarios
-- Flexible configuration system with multiple `.config.js` files allowing targeted test runs for specific pages or features
+  
+  - Comprehensive Test Coverage: "Automation for multiple DemoQA pages including Forms, Check Boxes, Web Tables, Buttons, Alerts, Widgets, and more."
+  - Modular Structure: "Clear separation of test logic, helpers, and spec files for maintainability."
+  - Reusable Helpers: "Functions for interacting with elements, filling forms, verifying values, and handling dropdowns."
+  - Locator Abstraction: "All UI element selectors are centralized for easy updates and readability."
+  - Clean Test Cases: "Spec files only contain 'it()' blocks; all logic resides in helper files."
+  - Scalable Design: "Easily add new components, test scenarios, or pages without restructuring the project."
+  - Flexible Configurations: "Multiple '.config.js' files allow targeted test runs with different settings."
+  - Robust Validation: "Supports positive and negative test cases including form validations, dropdown checks, and modal verifications."
 ---
