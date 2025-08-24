@@ -20,16 +20,25 @@ export const rightClickOnElement = (locator, ifForcing = false) => {
   return cy.get(locator).rightclick({ force: ifForcing })
 }
 
-export const dublleclickOnElement = (locater,ifForcing = false) => {
-  return cy.get(locater).click({force:ifForcing})
+export const checkElement = (locater) =>{
+  return cy.get(locater).check({ force: true })
 }
 
 export const verifyElementExistence = (locater, flag) => {
   if(flag){
     return cy.get(locater).should('exist')
-  }
+  } 
   else{
     return cy.get(locater).should('not.exist')
+  }
+}
+
+export const verifyVisibility = (locater, flag) => {
+  if(flag){
+    return cy.get(locater).should('be.visible')
+  }
+  else{
+    return cy.get(locater).should('not.be.visible')
   }
 }
 
@@ -39,6 +48,12 @@ export const elementItemsLength = (locater,length) =>{
 
 export const elementContains = (locater,text) => {
   return cy.get(locater).contains(text)
+}
+
+export const elementHasPlaceholder = (selector, placeholder) => {
+  cy.get(selector)
+    .should('exist')
+    .and('have.attr', 'placeholder', placeholder)
 }
 
 export const elementValue = (locater,value) =>{
@@ -64,7 +79,9 @@ export const checkedStatus = (locater,flag) => {
 }
 
 export const fillInput = (locater,value) =>{
-  return cy.get(locater).clear().type(value)
+  if(value){
+    return cy.get(locater).clear().type(value)
+  }
 }
 
 
@@ -74,4 +91,16 @@ export const interceptApi = (apiEndpoint) => {
 
 export const uploadFile = (locater,path) =>{
   return cy.get(locater).selectFile(path, { force: true })
+}
+
+export const currentDate =  () => {
+  const today = new Date()
+  const day = today.toLocaleString('en-GB', { day: '2-digit' })
+  const month = today.toLocaleString('en-GB', { month: 'long' })
+  const year = today.getFullYear()
+
+  return `${day} ${month},${year}` 
+}
+export const currentDateShort = () => {
+  return new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/,/g,'');
 }
