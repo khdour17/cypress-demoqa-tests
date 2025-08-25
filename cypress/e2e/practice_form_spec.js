@@ -1,9 +1,12 @@
 import * as commonHelper from '../support/common_helper.js'
 import * as practiceFormHelper from '../support/practice_form_helper.js'
 
+// Cypress.config('baseUrl')
+// '/automation-practice-form'
+
 describe('Practice Form Page', () => {
   beforeEach(() => {
-    commonHelper.visitPage('/automation-practice-form')
+    commonHelper.visitPage(Cypress.config('baseUrl'))
   })
 
   it('should verify that all elements exist', () => {
