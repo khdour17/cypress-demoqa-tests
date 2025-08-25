@@ -79,33 +79,34 @@ export const formData = [
     //  Positive full form
     {
         input: {
-        firstName: 'Ali',
-        lastName: 'Khdour',
-        email: 'ali@test.com',
-        gender: 'Male',
-        mobile: '0736878754',
-        dateOfBirth: '20 August 1998',
-        subjects: ['Chemistry', 'Computer Science'],
-        hobbies: ['Sports', 'Reading', 'Music'],
-        picture: 'cypress/snapshots/sample_file_snapshot.jpeg',
-        address: 'Nor-212 Norra Allégatan 24',
-        state: 'NCR',
-        city: 'Delhi'
+            firstName: 'Omar',
+            lastName: 'Hassan',
+            email: 'omar.hassan@example.com',
+            gender: 'Female',
+            mobile: '0791234567',
+            dateOfBirth: '15 July 2001',
+            subjects: ['Maths', 'English'],
+            hobbies: ['Music', 'Reading'],
+            picture: 'cypress/snapshots/test_image.jpeg',
+            address: 'Sunset Blvd 45, Stockholm',
+            state: 'Uttar Pradesh',
+            city: 'Lucknow'
         },
         expected: {
-        'Student Name': 'Ali Khdour',
-        'Student Email': 'ali@test.com',
-        'Gender': 'Male',
-        'Mobile': '0736878754',
-        'Date of Birth': '20 August,1998',
-        'Subjects': 'Chemistry, Computer Science',
-        'Hobbies': 'Sports, Reading, Music',
-        'Picture': 'sample_file_snapshot.jpeg',
-        'Address': 'Nor-212 Norra Allégatan 24',
-        'State and City': 'NCR Delhi'
+            'Student Name': 'Omar Hassan',
+            'Student Email': 'omar.hassan@example.com',
+            'Gender': 'Female',
+            'Mobile': '0791234567',
+            'Date of Birth': '15 July,2001',
+            'Subjects': 'Maths, English',
+            'Hobbies': 'Music, Reading',
+            'Picture': 'test_image.jpeg',
+            'Address': 'Sunset Blvd 45, Stockholm',
+            'State and City': 'Uttar Pradesh Lucknow'
         },
         ifPositive: true
     },
+
 
     //  Missing last name
     {
