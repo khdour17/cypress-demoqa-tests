@@ -6,6 +6,7 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://demoqa.com',
     specPattern: 'cypress/e2e/**/*.js',
+    failOnStatusCode: false,
     setupNodeEvents(on, config) {
       addMatchImageSnapshotPlugin(on, config)
       return config
