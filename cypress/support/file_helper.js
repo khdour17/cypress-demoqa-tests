@@ -23,41 +23,42 @@ export const checkAllElementsExist = () => {
   
 export const downloadAndCompare = () => {
   // Click download button
-  commonHelper.clickOnElement(locators.downloadBtn);
+  commonHelper.clickOnElement(locators.downloadBtn)
 
-  // Extract base64 data from href attribute
+  // Get base64 href and add temp image to DOM
   cy.get(locators.downloadBtn)
     .should('have.attr', 'href')
     .then((href) => {
-      const base64Data = href.split(',')[1];
-      const imageSrc = `data:image/jpeg;base64,${base64Data}`;
+      const base64Data = href.split(',')[1]
+      const imageSrc = `data:image/jpeg;base64,${base64Data}`
 
-      // Add temp image into DOM
       cy.document().then((doc) => {
-        const img = doc.createElement('img');
-        img.src = imageSrc;
+        const img = doc.createElement('img')
+        img.src = imageSrc
         img.id = locators.newImageId
-        img.style.display = 'block';
-        img.style.maxWidth = '500px';
-        doc.body.appendChild(img);
-      });
+        img.style.display = 'block'
+        doc.body.appendChild(img)
+      })
 
-      // Ensure image loaded
+      // Wait for image to load
       cy.get(locators.newImage)
         .should('be.visible')
-        .and(($img) => {
-          expect($img[0].naturalWidth).to.be.greaterThan(0);
-        });
+        .should(($img) => {
+          expect($img[0].naturalWidth).to.be.greaterThan(0)
+          expect($img[0].naturalHeight).to.be.greaterThan(0)
+        })
 
-      // Compare with snapshot
-      cy.get(locators.newImage).matchImageSnapshot(testData.snapshotName);
+      // Use .toMatchImageSnapshot for visual comparison
+      cy.get(locators.newImage).matchImageSnapshot(testData.snapshotName,{
+        failureThreshold: 0,
+        failureThresholdType: 'pixel',
+        customDiffConfig: { threshold: 0.0 }
+      })
 
-      // Cleanup temp image
-      cy.get(locators.newImage).then(($img) => $img.remove());
-    });
-};
-
-
+      // Cleanup
+      cy.get(locators.newImage).then(($img) => $img.remove())
+    })
+}
 
 export const uploadFileAndCheckPath = () => {
     commonHelper.uploadFile(locators.uploadInput,testData.snapshotPath)

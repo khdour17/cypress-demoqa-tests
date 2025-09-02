@@ -45,7 +45,7 @@ const placeholderFields = [
     { locator: locators.currentAddress, placeholder: 'Current Address' }
 ]
 
-export const testData = {
+const testData = {
   states: ['NCR', 'Uttar Pradesh', 'Haryana', 'Rajasthan'],
   cities: {
     NCR: ['Delhi', 'Gurgaon', 'Noida'],
@@ -272,7 +272,7 @@ export const fillForm = (data) => {
 
   commonHelper.fillInput(locators.lastName, data.lastName)
   
-  if(data.email){
+  if (data.email) {
     commonHelper.fillInput(locators.email, data.email)
   }
   
@@ -281,7 +281,7 @@ export const fillForm = (data) => {
 
   // Date of birth
   if (data.dateOfBirth) {
-    const [day, month, year] = data.dateOfBirth.split(' ') // e.g. "20 Aug 1998"
+    const [day, month, year] = data.dateOfBirth.split(' ') 
 
     commonHelper.clickOnElement(locators.dateOfBirth)
     cy.get(locators.monthSelect).select(month)
@@ -352,5 +352,4 @@ export const runFormTestCase = (index) => {
   else{
     commonHelper.verifyElementExistence(locators.submitionForm,false)
   }
-  
 }

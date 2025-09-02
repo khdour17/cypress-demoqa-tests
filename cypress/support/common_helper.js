@@ -102,5 +102,5 @@ export const currentDate =  () => {
   return `${day} ${month},${year}` 
 }
 export const currentDateShort = () => {
-  return new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/,/g,'');
+  return new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/,/g,'')
 }
