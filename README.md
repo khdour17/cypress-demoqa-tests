@@ -1,9 +1,7 @@
 # Cypress DemoQA Tests
 
 This repository contains end-to-end test automation for the [DemoQA](https://demoqa.com/) website using Cypress.  
-Covers multiple pages and components including Forms, Check Boxes,
-    Web Tables, Buttons, Alerts, and Widgets. Uses a modular structure,
-    reusable helpers, and best practices for maintainable and scalable tests.
+It demonstrates a robust and scalable framework for automated UI testing with reusable helpers, modular structure, and clean test design. The project is designed to be easy to extend and maintain, providing reliable automated testing for a wide range of web applications.
 
 
 ## 📁 Project Structure:
@@ -58,13 +56,36 @@ Covers multiple pages and components including Forms, Check Boxes,
 ---
 
 ## ✅ Features
-  
-  - Comprehensive Test Coverage: "Automation for multiple DemoQA pages including Forms, Check Boxes, Web Tables, Buttons, Alerts, Widgets, and more."
-  - Modular Structure: "Clear separation of test logic, helpers, and spec files for maintainability."
-  - Reusable Helpers: "Functions for interacting with elements, filling forms, verifying values, and handling dropdowns."
-  - Locator Abstraction: "All UI element selectors are centralized for easy updates and readability."
-  - Clean Test Cases: "Spec files only contain 'it()' blocks; all logic resides in helper files."
-  - Scalable Design: "Easily add new components, test scenarios, or pages without restructuring the project."
-  - Flexible Configurations: "Multiple '.config.js' files allow targeted test runs with different settings."
-  - Robust Validation: "Supports positive and negative test cases including form validations, dropdown checks, and modal verifications."
+
+  - **Comprehensive Test Automation**:
+    Covers a variety of common web application features, including forms, tables, drag-and-drop interactions, buttons, alerts, modals, sliders, progress bars, and more.
+  - **Modular and Maintainable Structure**:
+    Test logic, page interactions, and reusable utilities are separated, making the code easy to maintain and extend.
+  - **Reusable Helpers**:
+    Centralized functions for interacting with UI elements, performing complex actions, validating results, and managing test data.
+  - **Locator Abstraction**:
+    All element selectors are centralized to make updates easier and improve readability of tests.
+  - **Clean and Readable Test Cases**:
+    Spec files contain only it() blocks; all interaction logic and assertions reside in helper files.
+  - **Flexible Test Configurations**:
+    Supports multiple configurations for running tests across different environments, browsers, or test scenarios.
+  - **Positive and Negative Testing**:
+    Handles validation for correct behavior as well as error handling, form validations, and edge cases.
+  - **Dynamic and Robust Assertions**:
+    Includes strategies for handling timing issues, dynamic content, and asynchronous updates in UI components.
+  - **Cross-Browser Support**:
+    Tests can run in Chrome, Edge, Firefox, and Electron."
+  - **Scalable Design**:
+    Adding new pages, components, or test scenarios is straightforward, without restructuring existing code.
+
+## Screenshots:
+1. Tests Complete: Shows the Cypress test runner after all tests have successfully passed.
+   ![Tests Complete](./cypress/screenshots/test_complete.jpg)   
+3. Error Screen: Captures the screen when a test fails, showing the assertion or error message.
+   ![Tests Complete](./cypress/screenshots/error_screen.jpg)   
+5. Spec File: Screenshot of the spec file structure and test cases in the code editor.
+   ![Tests Complete](./cypress/screenshots/spec_file.jpg)   
+7. Helper File: Screenshot of the helper file showing reusable functions and locators.
+   ![Tests Complete](./cypress/screenshots/helper_file.jpg)   
+
 ---
