@@ -113,7 +113,12 @@ export const testData = [
   }
 ]
 
-
+export const verifyAllTabsExist = ()=>{
+    commonHelper.verifyElementExistence(locators.tabSimple,true)
+    commonHelper.verifyElementExistence(locators.tabAccept,true)
+    commonHelper.verifyElementExistence(locators.tabPrevent,true)
+    commonHelper.verifyElementExistence(locators.tabRevert,true)
+}
 
 // --- Special handlers for revert logic ---
 const verifyReverted = (source, target) => {

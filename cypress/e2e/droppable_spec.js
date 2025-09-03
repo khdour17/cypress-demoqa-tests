@@ -6,6 +6,9 @@ describe('Droppable Page Tests', () => {
     commonHelper.visitPage('/droppable')
   })
 
+  it('Verify all tabs exist',()=>{
+    droppableHelper.verifyAllTabsExist()
+  })
   // --- Simple tab ---
   it('Simple drag and drop', () => {
     droppableHelper.dragAndDropAndCheck(droppableHelper.testData[0])
