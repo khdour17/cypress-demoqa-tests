@@ -46,8 +46,13 @@ export const elementItemsLength = (locater,length) =>{
   return cy.get(locater).should('have.length', length)
 }
 
-export const elementContains = (locater,text) => {
-  return cy.get(locater).contains(text)
+export const elementContains = (locater,text,flag = true) => {
+  if(flag){
+    cy.get(locater).contains(text)
+  }
+  else{
+    cy.get(locater).should('not.contain.text',text)
+  }
 }
 
 export const elementHasPlaceholder = (selector, placeholder) => {
