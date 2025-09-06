@@ -25,7 +25,7 @@ It demonstrates a robust and scalable framework for automated UI testing with re
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/cypress-demoqa-tests.git
+   git clone https://github.com/khdour17/cypress-demoqa-tests.git
    cd cypress-demoqa-tests
    ```
 
